@@ -20,25 +20,12 @@ resource "vsphere_virtual_machine" "vm" {
 
   clone {
     template_uuid = data.vsphere_virtual_machine.template.id
-
-    customize {
-      linux_options {
-        host_name = var.vmName
-        domain    = "local"
-      }
-
-      network_interface {
-        ipv4_address = var.vmIP
-        ipv4_netmask = var.vmNetmask
-      }
-
-      ipv4_gateway = var.vmGateway
-      dns_server_list = [var.vmDNS]
-    }
   }
 
     extra_config = {
-    "guestinfo.cloud-init.config.data" = base64encode(file("${path.module}/cloud-init.yaml"))
-    "guestinfo.cloud-init.config.data.encoding" = "base64"
+      "guestinfo.metadata"          = base64encode(file("${path.module}/metadata.yaml"))
+      "guestinfo.metadata.encoding" = "base64"
+      "guestinfo.userdata"          = base64encode(file("${path.module}/userdata.yaml"))
+      "guestinfo.userdata.encoding" = "base64"
   }
 }

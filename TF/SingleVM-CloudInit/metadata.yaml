@@ -1,0 +1,13 @@
+instance-id: cloud-vm
+local-hostname: cloud-vm
+network:
+  version: 2
+  ethernets:
+    ens192:
+      dhcp4: false
+      addresses:
+        - 10.100.12.51/24
+      gateway4: 10.100.12.1
+      nameservers:
+        addresses:
+          - 10.100.12.1
