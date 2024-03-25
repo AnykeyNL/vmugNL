@@ -1,0 +1,19 @@
+#cloud-config
+
+users:
+  - default
+  - name: richard
+    primary_group: vmugnl
+    sudo: ALL=[ALL] NOPASSWD:ALL
+    groups: sudo, wheel
+    ssh_import_id: None
+    lock_passwd: true
+    ssh_authorized_keys:
+    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCYey/d8gfoX7KuePYYiFg9U6+w9ZulmHi3xYn7pquKaYv9KN3eAAfqywSmAydLQns7dDKqAyNq20WvdUFM+j2+dfnIek1o7QMhDZFDupToQq73v8p984LkazWrODCN4/SDNyYxQ/jeBRswXtQu8+49Rm/aI/W3u2uz6dDjxWFrDF9qfSX5XQB4fcmxB7J4z8jNm/Un0B/OM8uZV/Jm4lYC/BjXLFRIwNFRTow52n5mVR5e42ezQMxHdYEnE8cP8e+ELhHynybwjcas3mIAj/jRx83EVqznOBHpzb7bYK6hnp6T9VCv6UYjvCtk78voqpRKCpOdl4/cZtW0pvP/nNmr phpseclib-generated-key
+
+packages:
+  - git
+  - apache2
+
+runcmd:
+  - sudo wget https://raw.githubusercontent.com/AnykeyNL/vmugNL/main/TF/SingleVM-CloudInit/index.html -O /var/www/html/index.html
