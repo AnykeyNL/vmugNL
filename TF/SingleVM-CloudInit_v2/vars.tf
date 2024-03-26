@@ -4,7 +4,7 @@ variable datastore {default = "vsanDatastore"}
 variable cluster {default = "oci01-w01-consolidated01"}
 
 variable baseTemplate {default = "TemplateUbuntu2204ci"}
-variable vmName {default="VMUG-demo"}
+variable vmName {default="VMUG-demo-01"}
 variable vmCPU {default = 2}
 variable vmMemory {default =8096}
 

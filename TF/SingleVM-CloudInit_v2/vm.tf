@@ -1,5 +1,5 @@
 resource "vsphere_virtual_machine" "vm" {
-  count = 5
+  count = 3
   name             = "${var.vmName}-${count.index+1}"
   datastore_id     = data.vsphere_datastore.datastore.id
   resource_pool_id = data.vsphere_resource_pool.pool.id

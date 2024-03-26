@@ -14,3 +14,6 @@ users:
 packages:
   - git
   - apache2
+
+runcmd:
+  - sudo wget https://raw.githubusercontent.com/AnykeyNL/vmugNL/main/TF/SingleVM-CloudInit/index.html -O /var/www/html/index.html

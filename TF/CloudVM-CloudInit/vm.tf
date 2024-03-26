@@ -4,7 +4,6 @@ resource "oci_core_instance" "my_instance" {
     compartment_id = data.oci_identity_compartments.myCompartment.id
     shape = var.instance_shape
 
-
     create_vnic_details {
         subnet_id = var.subnet
     }

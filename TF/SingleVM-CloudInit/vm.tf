@@ -28,4 +28,7 @@ resource "vsphere_virtual_machine" "vm" {
       "guestinfo.userdata"          = base64encode(file("${path.module}/userdata.yaml"))
       "guestinfo.userdata.encoding" = "base64"
   }
+
+
+
 }
