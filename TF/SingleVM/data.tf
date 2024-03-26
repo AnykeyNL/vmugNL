@@ -1,3 +1,6 @@
+
+
+
 data "vsphere_datacenter" "dc" {
   name = var.datacenter
 }
@@ -26,3 +29,4 @@ data "vsphere_resource_pool" "pool" {
   name          = var.vmResourcePool
   datacenter_id = data.vsphere_datacenter.dc.id
 }
+
